@@ -13,7 +13,7 @@ document.getElementById('signUpForm').addEventListener('submit', function(event)
     const usernameError = document.getElementById('usernameError');
     const emailError = document.getElementById('emailError');
     const passwordError = document.getElementById('passwordError');
-    const checkboxError = document.getElementById('checkboxError');
+    const checkboxError = document.getElementById('checkboxError')
 
 // Perfom Validations
 
@@ -21,12 +21,12 @@ document.getElementById('signUpForm').addEventListener('submit', function(event)
 if(username.value.trim()=== ''){
     usernameError.textContent = 'Username is required';
     username.style.borderColor = 'red';
-    isValid = false;
+    isValid = false
 }
 
 //email
 
-const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 if(email.value.trim()=== ''){
     emailError.textContent = 'Email address is required'
@@ -34,15 +34,32 @@ if(email.value.trim()=== ''){
     isValid = false;
 }else if (!emailRegex.test(email.value.trim())){
     emailError.textContent = 'Please enter a valid email address'
-    inValid = false
+    isValid = false
 }
 
 //password
 
-if(password.valu.trim() === ''){
+if(password.value.trim() === ''){
     passwordError.textContent ='Password is required';
+    password.style.borderColor = 'red'
+    isValid = false
+}else if (password.value.length <8){
+    passwordError.textContent = 'Password must be atleast 8 characters long';
     isValid = false
 }
 
-})
+//checkbox
+
+if(!checkbox.checked){
+    checkboxError.textContent = 'You must accept term and conditons'
+    isValid =false
+}
+
+if(isValid){
+    console.log('all the inputs from user are valid');
+}else{
+    console.log('Failed to submit, some of the fields are invalid')
+}
+
+});
 
