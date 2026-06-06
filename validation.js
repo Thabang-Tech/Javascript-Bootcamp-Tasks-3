@@ -63,3 +63,21 @@ if(isValid){
 
 });
 
+const resendBtn = document.getElementById('resendBtn')
+resendBtn.disabled = true
+let seconds = 10
+
+resendBtn.textContent = `Resend Verification (${seconds}s)`
+const timer = setInterval(() => {
+    seconds--;
+
+    resendBtn.textContent = `Resend Verification (${seconds}s)`
+    if (seconds === 0){
+        clearInterval(timer)
+        resendBtn.disabled = false
+        resendBtn.textContent = 'Resend Verification'
+
+    }
+}, 1000);
+
+
