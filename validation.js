@@ -56,7 +56,7 @@ if(!checkbox.checked){
 }
 
 if(isValid){
-    console.log('all the inputs from user are valid');
+    console.log('All the inputs from user are valid');
 }else{
     console.log('Failed to submit, some of the fields are invalid')
 }
