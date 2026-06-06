@@ -1,6 +1,6 @@
 // fake studentDatabase
 
-const fakeDatabase = {
+const studentDatabase = {
     profiles: [
         {
             id: 1998,
