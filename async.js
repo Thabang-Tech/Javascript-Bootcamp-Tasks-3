@@ -1,3 +1,4 @@
+// Asynchronous Programming
 // fake studentDatabase
 
 const studentDatabase = {
@@ -12,5 +13,28 @@ const studentDatabase = {
 
         { id: 1995, firstName: 'Dlozi', lastName: 'Mthethwa', email: 'dlozi@gmail.com', course: 'CPP',age: 27}
     ] 
-
 }
+
+
+//Question 1: Synchronous JavaScript
+
+function demoSynchronousExecution(){
+    console.log('Step-1 - The function is starting')
+    console.log('Step-2 - The process is in action')
+    console.log('Step-3 - The function reached the final stage')
+}
+
+demoSynchronousExecution();
+
+//Question 2: Using setTimeout()
+
+function displayStudentsAfterDelay() {
+    setTimeout(() => {
+        studentDatabase.profiles.forEach(student => {
+            console.log(`ID: ${student.id}, Name: ${student.firstName} ${student.lastName}, Email: ${student.email}, Course: ${student.course}, Age: ${student.age}`);
+        });
+
+    }, 3000);
+}
+
+displayStudentsAfterDelay();
